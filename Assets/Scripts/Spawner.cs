@@ -9,11 +9,17 @@ public class Spawner : MonoBehaviour {
 	const int STARTNUM = 50;
 	const int INTERVAL = 10;
 
+	int CreateCoinNum;
 	int Counter;
 	int Interval;
 
+	private int UsersCoins;
+	public int UsersCoinCounter{get{return UsersCoins;} set{UsersCoins = value;}}
+
 	void Start()
 	{
+		UsersCoins = 30;
+		CreateCoinNum = STARTNUM;
 		Counter = 0;
 		Interval = INTERVAL;
 	}
@@ -25,18 +31,22 @@ public class Spawner : MonoBehaviour {
 		if (Interval >= INTERVAL) 
 		{
 			Interval = 0;
-			GameStarter (STARTNUM);
+			RandomCoinCreater (CreateCoinNum);
 		}
 
 		if (Input.GetMouseButtonDown (0)) 
 		{
-			Vector3 offset = new Vector3(Mathf.Sin(Time.time * 16), 0, 0);
-			CreateCoin(ChoiceCoin(), offset);
+			if(UsersCoins > 0)
+			{
+				Vector3 offset = new Vector3(Mathf.Sin(Time.time * 16), 0, 0);
+				CreateCoin(ChoiceCoin(), offset);
+				UsersCoins --;
+			}
 		}
 	}
 
-	// 初期配置をランダムで行う.
-	private void GameStarter(int count)
+	// 任意数生成をランダムで行う.
+	private void RandomCoinCreater(int count)
 	{
 		Counter++;
 		if (Counter <= count) 
@@ -76,8 +86,12 @@ public class Spawner : MonoBehaviour {
 		coin.GetComponent<Coin>().SetColor(choiceCoin);
 	}
 
-
-
+	// コインボーナス取得.
+	public void AddBounusCoin(int createNewCoins)
+	{
+		CreateCoinNum = createNewCoins;
+		Counter = 0;
+	}
 
 
 }
