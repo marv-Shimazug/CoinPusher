@@ -1,0 +1,24 @@
+
+
+■ゲーム内容
+コインを無限に増やすゲームです。
+画面をマウスクリックでコインを１枚、金銀ランダムで出現させます。
+累計獲得枚数が10の倍数になった時、コインがランダムの枚数で出現します。
+
+
+■参考サイト
+【Unity3】Unityと言えばコイン落とし！Prefab, Material設定【コインプッシャー1】
+http://hiyotama.hatenablog.com/entry/2015/04/24/132330
+【Unity3】コインを落とす！Mathf.Sin, Time.time, MovePosition【コインプッシャー2】
+http://hiyotama.hatenablog.com/entry/2015/04/30/140000
+【Unity3】コインを生成！GetMouseButtonDown, Instantiate【コインプッシャー3】
+http://hiyotama.hatenablog.com/entry/2015/05/01/060000
+【Unity3】uGUIでスコア機能実装！OnTriggerEnter, FindGameObjectWithTag【コインプッシャー4】
+http://hiyotama.hatenablog.com/entry/2015/05/02/060000
+
+
+■未実装箇所
+効果音
+視点変更
+ユーザー所持コイン枚数選択
+ゲーム画面サイズ
