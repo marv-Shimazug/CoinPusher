@@ -9,13 +9,4 @@ public class GameRule : MonoBehaviour {
 		Screen.SetResolution (1024, 768, false);
 	}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
